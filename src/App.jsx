@@ -2,7 +2,9 @@
 const App = () => {
   return (
     <div className="min-h-screen flex justify-center items-center bg-stone-900">
-      <h1>Test</h1>
+      <div className="bg-white p-16 rounded-lg">
+        
+      </div>
       
     </div>
   );
