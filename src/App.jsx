@@ -1,19 +1,11 @@
 import { React } from 'react'
-
+import Todo from './components/Todo.jsx'
 export const App = () => {
   
-  const addTaskBtn = document.querySelector('button')
-  addTaskBtn.style.backgroundcolor = 'red'
 
   return (
-    <div class="flex">
-      <ul>
-        <li>Eat pizza.</li>
-        <li>learn react.</li> 
-       </ul>
-      <button className="bg-sky-400 rounded-lg p-2">Add Task</button>
-       
-
+    <div className='bg-stone-900 grid py-4 min-h-screen justify-center items-center'>
+      <Todo/> 
     </div>
   )
 }
