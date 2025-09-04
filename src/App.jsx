@@ -4,23 +4,34 @@ import completedIcon from './assets/tick.png'
 import notCompleted from './assets/not_tick.png'
 export const App = () => {
   
-  const [task, setTask] = useState("")
-  const [tasks, addTasks] = useState([]);
+  const [task, setTask] = useState('')
+  const [tasks, addTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('todos');
+    const initialTasks = JSON.parse(savedTasks); 
+    return initialTasks;
+
+  });
   
 
   const handleSetTask = (event) => {
     setTask(event.target.value);
   }
 
+
+
+
+
   const handleAddTasks = () => {
     if (task.trim() == "") return 
     addTasks([...tasks, {text: task, completed: false}]);
-    localStorage.setItem("todos", JSON.stringify(tasks));  
     setTask('')
+
   }
-
   
-
+  useEffect( () => {
+    const storedTasks = JSON.stringify(tasks);
+    localStorage.setItem("todos", storedTasks);
+  })
 
 
   
